@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pet Service - Bienvenido</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      padding-top: 56px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 1.5rem 0;
+    }
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+    .service-img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .about-img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      color: white;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      margin-bottom: 50px;
+    }
+    header .container {
+      background-color: rgba(0,0,0,0.4);
+      padding: 40px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Pet Service</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Registrarse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Iniciar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home / Bienvenida -->
+  <header id="home" class="text-center">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Bienvenido a Pet Service</h1>
+      <p class="lead mt-3">
+        Cuidamos a tu mejor amigo como se merece. Servicios profesionales para el bienestar de tus mascotas.
+      </p>
+      <a href="#services" class="btn btn-light btn-lg mt-3">Conoce nuestros servicios</a>
+    </div>
+  </header>
+
+  <!-- Sobre -->
+  <section id="about" class="container mb-5">
+    <h2 class="mb-4 text-center">Sobre Pet Service</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img
+          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80"
+          alt="Cuidado de mascotas"
+          class="about-img"
+        />
+      </div>
+      <div class="col-md-6">
+        <p class="fs-5">
+          En Pet Service, somos amantes de los animales y entendemos lo importante que es para ti la salud y felicidad de tu mascota.
+          Ofrecemos servicios personalizados que se adaptan a las necesidades de cada peludo, desde paseos diarios hasta atención veterinaria especializada.
+        </p>
+        <p class="fs-5">
+          Nuestro equipo está formado por profesionales capacitados y apasionados que brindan un ambiente seguro y cariñoso para tus mascotas.
+          Con nosotros, tu amigo estará en las mejores manos mientras tú disfrutas de tu día con tranquilidad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="services" class="bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center">Nuestros Servicios</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img
+              src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=600&q=80"
+              class="service-img"
+              alt="Paseos diarios"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Paseos Diarios</h5>
+              <p class="card-text">
+                Paseos seguros y divertidos para que tu mascota se mantenga activa, socialice y disfrute del aire libre.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img
+              src="https://images.unsplash.com/photo-1507149833265-60c372daea22?auto=format&fit=crop&w=600&q=80"
+              class="service-img"
+              alt="Guardería para mascotas"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Guardería</h5>
+              <p class="card-text">
+                Espacios cómodos y seguros para que tus mascotas se sientan como en casa mientras tú estás fuera.
+                Atención personalizada todo el día.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100">
+            <img
+              src="https://images.unsplash.com/photo-1583337130417-fd943574fd5a?auto=format&fit=crop&w=600&q=80"
+              class="service-img"
+              alt="Atención veterinaria"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Atención Veterinaria</h5>
+              <p class="card-text">
+                Contamos con profesionales en salud animal para chequeos, vacunas y emergencias.
+                Cuidamos a tu mascota con amor y responsabilidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p class="mb-1">&copy; 2025 Pet Service. Todos los derechos reservados.</p>
+      <p>
+        Síguenos en
+        <a href="#" class="text-white text-decoration-none" target="_blank" rel="noopener noreferrer">Facebook</a> |
+        <a href="#" class="text-white text-decoration-none" target="_blank" rel="noopener noreferrer">Instagram</a> |
+        <a href="#" class="text-white text-decoration-none" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

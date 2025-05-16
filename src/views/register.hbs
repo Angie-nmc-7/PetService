@@ -1,0 +1,90 @@
+<div class="container py-5">
+  <div class="col-lg-6 offset-lg-3">
+    <div class="card shadow-lg border-0 rounded-4">
+      <div class="card-header bg-success text-white rounded-top-4">
+        <h2 class="h4 mb-0">📝 Registro de usuario</h2>
+      </div>
+
+      <div class="card-body bg-light">
+        <form onsubmit="event.preventDefault(); register(email.value, password.value);" novalidate>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="correo@ejemplo.com"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="password" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <div id="message" class="mb-3"></div>
+
+          <button type="submit" class="btn btn-success w-100">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+
+<script>
+ const firebaseConfig = {
+  apiKey: "AIzaSyAx8OqP3rWlWLSrhNAmR6gdxtQ5onDoPTY",
+  authDomain: "petservice-134dd.firebaseapp.com",
+  projectId: "petservice-134dd",
+  storageBucket: "petservice-134dd.firebasestorage.app",
+  messagingSenderId: "1078561661299",
+  appId: "1:1078561661299:web:4aa56e2dbd3b2de6b92506"
+};
+  firebase.initializeApp(firebaseConfig);
+
+  const messageDiv = document.getElementById("message");
+
+  async function register(email, password) {
+    messageDiv.textContent = "";
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      messageDiv.className = "alert alert-success";
+      messageDiv.textContent = "Usuario registrado con éxito 🎉";
+    } catch (error) {
+      messageDiv.className = "alert alert-danger";
+      messageDiv.textContent = "Error al registrar: " + error.message;
+    }
+  }
+
+  async function login(email, password) {
+    try {
+      const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+      const idToken = await userCredential.user.getIdToken();
+      await fetch("/sessionLogin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idToken }),
+      });
+      window.location.href = "/";
+    } catch (error) {
+      alert("Error al iniciar sesión: " + error.message);
+    }
+  }
+
+  function logout() {
+    fetch("/sessionLogout", { method: "POST" }).then(() => {
+      firebase.auth().signOut();
+      location.reload();
+    });
+  }
+</script>
